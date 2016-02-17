@@ -13,6 +13,7 @@ class GameScene: SKScene {
     
     //MARK: - Constants
     //All constants that are in meters must be multiplied with 10 because a point is 0.1 m!
+    // I am not sure how big a point should be (when I know it will be easier to get the zoom and the camera working)
     
     private struct InRunInMetersAndDegrees {
         static let LengthBeforeTransitionCureve:CGFloat = 120.0*10 //m
