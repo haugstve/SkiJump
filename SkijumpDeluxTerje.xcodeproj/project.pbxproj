@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		364405221C72405000434AA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364405211C72405000434AA1 /* AppDelegate.swift */; };
+		364405261C72405000434AA1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364405251C72405000434AA1 /* GameScene.swift */; };
+		364405281C72405000434AA1 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364405271C72405000434AA1 /* GameViewController.swift */; };
+		3644052B1C72405000434AA1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364405291C72405000434AA1 /* Main.storyboard */; };
+		3644052D1C72405000434AA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3644052C1C72405000434AA1 /* Assets.xcassets */; };
+		364405301C72405000434AA1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3644052E1C72405000434AA1 /* LaunchScreen.storyboard */; };
+		36DA71E81C724B8C00503D30 /* JumpingHillConstantNames.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 36DA71E71C724B8C00503D30 /* JumpingHillConstantNames.rtf */; };
+		36DA71F61C72513200503D30 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71EA1C72513200503D30 /* CGFloat+Extensions.swift */; };
+		36DA71F71C72513200503D30 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71EB1C72513200503D30 /* CGPoint+Extensions.swift */; };
+		36DA71F81C72513200503D30 /* CGVector+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71EC1C72513200503D30 /* CGVector+Extensions.swift */; };
+		36DA71F91C72513200503D30 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71ED1C72513200503D30 /* Int+Extensions.swift */; };
+		36DA71FA1C72513200503D30 /* SKAction+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71EE1C72513200503D30 /* SKAction+Extensions.swift */; };
+		36DA71FB1C72513200503D30 /* SKAction+SpecialEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71EF1C72513200503D30 /* SKAction+SpecialEffects.swift */; };
+		36DA71FC1C72513200503D30 /* SKColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F01C72513200503D30 /* SKColor+Extensions.swift */; };
+		36DA71FD1C72513200503D30 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F11C72513200503D30 /* SKNode+Extensions.swift */; };
+		36DA71FE1C72513200503D30 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F21C72513200503D30 /* SKTAudio.swift */; };
+		36DA71FF1C72513200503D30 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F31C72513200503D30 /* SKTEffects.swift */; };
+		36DA72001C72513200503D30 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F41C72513200503D30 /* SKTTimingFunctions.swift */; };
+		36DA72011C72513200503D30 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F51C72513200503D30 /* Vector3.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3644051E1C72405000434AA1 /* SkijumpDeluxTerje.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkijumpDeluxTerje.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		364405211C72405000434AA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		364405251C72405000434AA1 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		364405271C72405000434AA1 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		3644052A1C72405000434AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3644052C1C72405000434AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3644052F1C72405000434AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		364405311C72405000434AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36DA71E71C724B8C00503D30 /* JumpingHillConstantNames.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = JumpingHillConstantNames.rtf; sourceTree = "<group>"; };
+		36DA71EA1C72513200503D30 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71EB1C72513200503D30 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71EC1C72513200503D30 /* CGVector+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGVector+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71ED1C72513200503D30 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71EE1C72513200503D30 /* SKAction+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71EF1C72513200503D30 /* SKAction+SpecialEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKAction+SpecialEffects.swift"; sourceTree = "<group>"; };
+		36DA71F01C72513200503D30 /* SKColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKColor+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71F11C72513200503D30 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		36DA71F21C72513200503D30 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
+		36DA71F31C72513200503D30 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
+		36DA71F41C72513200503D30 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
+		36DA71F51C72513200503D30 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3644051B1C72405000434AA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		364405151C72405000434AA1 = {
+			isa = PBXGroup;
+			children = (
+				364405201C72405000434AA1 /* SkijumpDeluxTerje */,
+				3644051F1C72405000434AA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3644051F1C72405000434AA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3644051E1C72405000434AA1 /* SkijumpDeluxTerje.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		364405201C72405000434AA1 /* SkijumpDeluxTerje */ = {
+			isa = PBXGroup;
+			children = (
+				364405211C72405000434AA1 /* AppDelegate.swift */,
+				364405251C72405000434AA1 /* GameScene.swift */,
+				364405271C72405000434AA1 /* GameViewController.swift */,
+				364405291C72405000434AA1 /* Main.storyboard */,
+				3644052C1C72405000434AA1 /* Assets.xcassets */,
+				36DA71E71C724B8C00503D30 /* JumpingHillConstantNames.rtf */,
+				3644052E1C72405000434AA1 /* LaunchScreen.storyboard */,
+				364405311C72405000434AA1 /* Info.plist */,
+				36DA71E91C72513200503D30 /* SKTUtils */,
+			);
+			path = SkijumpDeluxTerje;
+			sourceTree = "<group>";
+		};
+		36DA71E91C72513200503D30 /* SKTUtils */ = {
+			isa = PBXGroup;
+			children = (
+				36DA71EA1C72513200503D30 /* CGFloat+Extensions.swift */,
+				36DA71EB1C72513200503D30 /* CGPoint+Extensions.swift */,
+				36DA71EC1C72513200503D30 /* CGVector+Extensions.swift */,
+				36DA71ED1C72513200503D30 /* Int+Extensions.swift */,
+				36DA71EE1C72513200503D30 /* SKAction+Extensions.swift */,
+				36DA71EF1C72513200503D30 /* SKAction+SpecialEffects.swift */,
+				36DA71F01C72513200503D30 /* SKColor+Extensions.swift */,
+				36DA71F11C72513200503D30 /* SKNode+Extensions.swift */,
+				36DA71F21C72513200503D30 /* SKTAudio.swift */,
+				36DA71F31C72513200503D30 /* SKTEffects.swift */,
+				36DA71F41C72513200503D30 /* SKTTimingFunctions.swift */,
+				36DA71F51C72513200503D30 /* Vector3.swift */,
+			);
+			path = SKTUtils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3644051D1C72405000434AA1 /* SkijumpDeluxTerje */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 364405341C72405000434AA1 /* Build configuration list for PBXNativeTarget "SkijumpDeluxTerje" */;
+			buildPhases = (
+				3644051A1C72405000434AA1 /* Sources */,
+				3644051B1C72405000434AA1 /* Frameworks */,
+				3644051C1C72405000434AA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SkijumpDeluxTerje;
+			productName = SkijumpDeluxTerje;
+			productReference = 3644051E1C72405000434AA1 /* SkijumpDeluxTerje.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		364405161C72405000434AA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Daniel Haugstvedt";
+				TargetAttributes = {
+					3644051D1C72405000434AA1 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 364405191C72405000434AA1 /* Build configuration list for PBXProject "SkijumpDeluxTerje" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 364405151C72405000434AA1;
+			productRefGroup = 3644051F1C72405000434AA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3644051D1C72405000434AA1 /* SkijumpDeluxTerje */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3644051C1C72405000434AA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36DA71E81C724B8C00503D30 /* JumpingHillConstantNames.rtf in Resources */,
+				364405301C72405000434AA1 /* LaunchScreen.storyboard in Resources */,
+				3644052D1C72405000434AA1 /* Assets.xcassets in Resources */,
+				3644052B1C72405000434AA1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3644051A1C72405000434AA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				364405261C72405000434AA1 /* GameScene.swift in Sources */,
+				36DA71F71C72513200503D30 /* CGPoint+Extensions.swift in Sources */,
+				36DA72001C72513200503D30 /* SKTTimingFunctions.swift in Sources */,
+				36DA71FF1C72513200503D30 /* SKTEffects.swift in Sources */,
+				36DA71FB1C72513200503D30 /* SKAction+SpecialEffects.swift in Sources */,
+				36DA71F81C72513200503D30 /* CGVector+Extensions.swift in Sources */,
+				36DA71FA1C72513200503D30 /* SKAction+Extensions.swift in Sources */,
+				36DA71FC1C72513200503D30 /* SKColor+Extensions.swift in Sources */,
+				364405281C72405000434AA1 /* GameViewController.swift in Sources */,
+				36DA71F91C72513200503D30 /* Int+Extensions.swift in Sources */,
+				36DA71FD1C72513200503D30 /* SKNode+Extensions.swift in Sources */,
+				36DA71FE1C72513200503D30 /* SKTAudio.swift in Sources */,
+				36DA71F61C72513200503D30 /* CGFloat+Extensions.swift in Sources */,
+				36DA72011C72513200503D30 /* Vector3.swift in Sources */,
+				364405221C72405000434AA1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		364405291C72405000434AA1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3644052A1C72405000434AA1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3644052E1C72405000434AA1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3644052F1C72405000434AA1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		364405321C72405000434AA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		364405331C72405000434AA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		364405351C72405000434AA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SkijumpDeluxTerje/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = funfirst.SkijumpDeluxTerje;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		364405361C72405000434AA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SkijumpDeluxTerje/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = funfirst.SkijumpDeluxTerje;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		364405191C72405000434AA1 /* Build configuration list for PBXProject "SkijumpDeluxTerje" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364405321C72405000434AA1 /* Debug */,
+				364405331C72405000434AA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		364405341C72405000434AA1 /* Build configuration list for PBXNativeTarget "SkijumpDeluxTerje" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				364405351C72405000434AA1 /* Debug */,
+				364405361C72405000434AA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 364405161C72405000434AA1 /* Project object */;
+}
