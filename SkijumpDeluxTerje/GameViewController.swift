@@ -12,12 +12,8 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     private struct GeometryConstants {
-        // Logical resolution iPad 768 x 1024 
-        // Chose width to be 400 m, Let each pixel be 0.1 m
-        // Logical width: width = 4000 = 400 m
-        // Logical height(keeping aspect ratio)  768/1024*4000 = 3000 = 300 m
-        
-        static let HillSize = CGSize(width: 4000, height: 3000)
+        // See GameScene for information regarding the scene size
+        static let HillSize = CGSize(width: 40000, height: 30000)
     }
 
     override func viewDidLoad() {

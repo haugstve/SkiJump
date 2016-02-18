@@ -15,38 +15,39 @@ class GameScene: SKScene {
     // Logical resolution iPad 768 x 1024
     // Physical size 7.68 m x 10.28 m
     // Each pixel is a cm
-    // Chose width to be 400 m, Let each pixel be 0.1 m
-    // Logical width: width = 4000 = 400 m
-    // Logical height(keeping aspect ratio)  768/1024*4000 = 3000 = 300 m
+    // Chose width to be 400 m, That means 40000 pixels!
+    // Logical height(keeping aspect ratio)  768/1024*40000 = 30000 = 300 m
+    // Game will be 30000 x 40000
     
-    // All constants that are in meters must be multiplied with 10 because a point is 0.1 m!
+    // All constants that are in meters must be multiplied with 100 because a point is 0.01 m!
     // I am not sure how big a point should be (when I know it will be easier to get the zoom and the camera working)
     
     private struct InRunInMetersAndDegrees {
-        static let LengthBeforeTransitionCureve:CGFloat = 120.0*10 //m
-        static let LengthOfTakeOffTable:CGFloat = 10.0*10 //m
-        static let TransitionCureveRadius:CGFloat = 100.0*10 //m
-        static let HeightOfTakeOffTable:CGFloat = 5.0*10 //m
+        static let LengthBeforeTransitionCureve:CGFloat = 120.0*100 //m
+        static let LengthOfTakeOffTable:CGFloat = 10.0*100 //m
+        static let TransitionCureveRadius:CGFloat = 100.0*100 //m
+        static let HeightOfTakeOffTable:CGFloat = 5.0*100 //m
         static let gradientInRun:CGFloat = 32.0 //degrees
         static let gradientTable:CGFloat = 6.0 //degrees
     }
     
     private struct LandingAreaInMetersAndDegrees {
         static let gradientAtBaseOfTakeOff:CGFloat = 22.0
-        static let lengthOfLanding:CGFloat = 200.0*10
+        static let lengthOfLanding:CGFloat = 200.0*100 //m
     }
     
     private struct JumperInMetersAndDegrees {
-        static let Height:CGFloat = 2.0 * 10//m
+        static let Height:CGFloat = 2.0 * 100 //m
     }
     
     private struct GeometryConstants {
-        static let StartingPoint = CGPoint(x: 20.0*10, y: 200.0*10)
-        static let JumperStartOffset = CGPoint(x: 1.0*10, y: 1.0*10)
+        static let StartingPoint = CGPoint(x: 20.0*100, y: 200.0*100) //m
+        static let JumperStartOffset = CGPoint(x: 1.0*100, y: 1.0*100) //m
         static let ScaleOfCamera:CGFloat = 0.1
     }
     
     private struct TimingConstants {
+        static let WaitBeforeStartAnimation:CFTimeInterval = 1.0
         static let StartAnimation:CFTimeInterval = 3.0
     }
     
@@ -92,13 +93,14 @@ class GameScene: SKScene {
         if let oldBall = childNodeWithName("ball") {
             oldBall.removeFromParent()
         }
+        let waitAction = SKAction.waitForDuration(TimingConstants.WaitBeforeStartAnimation)
         let scaleAction = SKAction.scaleTo(GeometryConstants.ScaleOfCamera, duration: TimingConstants.StartAnimation)
         let moveAction = SKAction.moveTo(GeometryConstants.StartingPoint, duration: TimingConstants.StartAnimation)
         let startCodeAction = SKAction.runBlock({ [unowned self] in
             self.addBall()
             self.gameHasStarted = true
             })
-        myCamera.runAction(SKAction.sequence([ SKAction.group([scaleAction, moveAction]), startCodeAction ]))
+        myCamera.runAction(SKAction.sequence([waitAction, SKAction.group([scaleAction, moveAction]), startCodeAction ]))
     }
     
     func drawInRun() {
@@ -124,7 +126,7 @@ class GameScene: SKScene {
         bzJumpHillPath.addLineToPoint(endOfLandingHill)
         
         let jumpHillNode = SKShapeNode(path: bzJumpHillPath.CGPath)
-        jumpHillNode.lineWidth = 10
+        jumpHillNode.lineWidth = 100
         jumpHillNode.strokeColor = SKColor.greenColor()
         jumpHillNode.physicsBody = SKPhysicsBody(edgeChainFromPath: bzJumpHillPath.CGPath)
         jumpHillNode.physicsBody?.dynamic = false
