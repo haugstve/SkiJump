@@ -38,7 +38,9 @@ class GameScene: SKScene {
         static let JumperStartOffset = CGPoint(x: 1.0*10, y: 1.0*10)
     }
     
-    
+    let myCamera = SKCameraNode()
+    var dt:CFTimeInterval = 0.0
+    var previousTime:CFTimeInterval = 0
 
     //MARK: - Lifecycle
     
@@ -46,6 +48,11 @@ class GameScene: SKScene {
         backgroundColor = SKColor.whiteColor()
         drawInRun()
         addBall()
+
+        addChild(myCamera)
+        camera = myCamera
+        myCamera.position = childNodeWithName("ball")?.position ?? GeometryConstants.StartingPoint
+    
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -55,7 +62,14 @@ class GameScene: SKScene {
     }
    
     override func update(currentTime: CFTimeInterval) {
-        /* Called before each frame is rendered */
+        if previousTime == 0 {
+            previousTime = currentTime
+            return
+        }
+        dt = currentTime - previousTime
+        previousTime = currentTime
+        let targetPosition = childNodeWithName("ball")?.position ?? GeometryConstants.StartingPoint
+        myCamera.runAction(SKAction.moveTo(targetPosition, duration: dt))
     }
     
     //MARK: - Helper functions
