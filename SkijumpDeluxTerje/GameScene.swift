@@ -47,7 +47,7 @@ class GameScene: SKScene {
     }
     
     private struct TimingConstants {
-        static let WaitBeforeStartAnimation:CFTimeInterval = 1.0
+        static let WaitBeforeStartAnimation:CFTimeInterval = 0.5
         static let StartAnimation:CFTimeInterval = 3.0
     }
     
@@ -60,10 +60,13 @@ class GameScene: SKScene {
     //MARK: - Lifecycle
     
     override func didMoveToView(view: SKView) {
+        print(view.frame)
+        print(self.frame)
         backgroundColor = SKColor.whiteColor()
         drawInRun()
-        addChild(myCamera)
-        camera = myCamera
+        myCamera.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(self.myCamera)
+        camera = self.myCamera
         startGame()
     }
     
@@ -73,6 +76,7 @@ class GameScene: SKScene {
         }
     }
    
+    // TODO: Adding camera moves to the camera origin (that is the problem not the rendering)
     override func update(currentTime: CFTimeInterval) {
         if !gameHasStarted || gameHasEnded {
             return
