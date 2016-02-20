@@ -26,6 +26,10 @@
 		36DA71FF1C72513200503D30 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F31C72513200503D30 /* SKTEffects.swift */; };
 		36DA72001C72513200503D30 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F41C72513200503D30 /* SKTTimingFunctions.swift */; };
 		36DA72011C72513200503D30 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36DA71F51C72513200503D30 /* Vector3.swift */; };
+		B0A22BA21C77A62C0023B2D6 /* Jumper.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0A22BA11C77A62C0023B2D6 /* Jumper.sks */; };
+		B0A22BA41C77AD830023B2D6 /* TestJumperScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0A22BA31C77AD830023B2D6 /* TestJumperScene.sks */; };
+		B0A22BA61C77B4060023B2D6 /* TestJumperScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A22BA51C77B4060023B2D6 /* TestJumperScene.swift */; };
+		B0A22BA81C77BA3A0023B2D6 /* Jumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A22BA71C77BA3A0023B2D6 /* Jumper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		36DA71F31C72513200503D30 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		36DA71F41C72513200503D30 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		36DA71F51C72513200503D30 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
+		B0A22BA11C77A62C0023B2D6 /* Jumper.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Jumper.sks; sourceTree = "<group>"; };
+		B0A22BA31C77AD830023B2D6 /* TestJumperScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TestJumperScene.sks; sourceTree = "<group>"; };
+		B0A22BA51C77B4060023B2D6 /* TestJumperScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestJumperScene.swift; sourceTree = "<group>"; };
+		B0A22BA71C77BA3A0023B2D6 /* Jumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jumper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +90,10 @@
 		364405201C72405000434AA1 /* SkijumpDeluxTerje */ = {
 			isa = PBXGroup;
 			children = (
+				B0A22BA11C77A62C0023B2D6 /* Jumper.sks */,
+				B0A22BA31C77AD830023B2D6 /* TestJumperScene.sks */,
+				B0A22BA51C77B4060023B2D6 /* TestJumperScene.swift */,
+				B0A22BA71C77BA3A0023B2D6 /* Jumper.swift */,
 				364405211C72405000434AA1 /* AppDelegate.swift */,
 				364405251C72405000434AA1 /* GameScene.swift */,
 				364405271C72405000434AA1 /* GameViewController.swift */,
@@ -175,6 +187,8 @@
 				36DA71E81C724B8C00503D30 /* JumpingHillConstantNames.rtf in Resources */,
 				364405301C72405000434AA1 /* LaunchScreen.storyboard in Resources */,
 				3644052D1C72405000434AA1 /* Assets.xcassets in Resources */,
+				B0A22BA41C77AD830023B2D6 /* TestJumperScene.sks in Resources */,
+				B0A22BA21C77A62C0023B2D6 /* Jumper.sks in Resources */,
 				3644052B1C72405000434AA1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				364405261C72405000434AA1 /* GameScene.swift in Sources */,
+				B0A22BA61C77B4060023B2D6 /* TestJumperScene.swift in Sources */,
 				36DA71F71C72513200503D30 /* CGPoint+Extensions.swift in Sources */,
 				36DA72001C72513200503D30 /* SKTTimingFunctions.swift in Sources */,
 				36DA71FF1C72513200503D30 /* SKTEffects.swift in Sources */,
@@ -200,6 +215,7 @@
 				36DA71FE1C72513200503D30 /* SKTAudio.swift in Sources */,
 				36DA71F61C72513200503D30 /* CGFloat+Extensions.swift in Sources */,
 				36DA72011C72513200503D30 /* Vector3.swift in Sources */,
+				B0A22BA81C77BA3A0023B2D6 /* Jumper.swift in Sources */,
 				364405221C72405000434AA1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
