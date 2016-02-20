@@ -91,14 +91,14 @@
 			isa = PBXGroup;
 			children = (
 				B0A22BA11C77A62C0023B2D6 /* Jumper.sks */,
+				B0A22BA71C77BA3A0023B2D6 /* Jumper.swift */,
 				B0A22BA31C77AD830023B2D6 /* TestJumperScene.sks */,
 				B0A22BA51C77B4060023B2D6 /* TestJumperScene.swift */,
-				364405211C72405000434AA1 /* AppDelegate.swift */,
-				B0A22BA71C77BA3A0023B2D6 /* Jumper.swift */,
 				364405251C72405000434AA1 /* GameScene.swift */,
 				364405271C72405000434AA1 /* GameViewController.swift */,
-				364405291C72405000434AA1 /* Main.storyboard */,
 				3644052C1C72405000434AA1 /* Assets.xcassets */,
+				364405291C72405000434AA1 /* Main.storyboard */,
+				364405211C72405000434AA1 /* AppDelegate.swift */,
 				36DA71E71C724B8C00503D30 /* JumpingHillConstantNames.rtf */,
 				3644052E1C72405000434AA1 /* LaunchScreen.storyboard */,
 				364405311C72405000434AA1 /* Info.plist */,
