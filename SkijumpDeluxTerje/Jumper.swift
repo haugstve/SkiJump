@@ -38,6 +38,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
             return CGPointZero
         }
         var pointOfJointInParentCoordiantes = sprite.position
+        
         pointOfJointInParentCoordiantes += CGPoint(x: -10, y: 5)
         //Angle is relative to parent and the body is tilted
         //pointOfJointInParentCoordiantes += CGPoint(angle: sprite.zRotation) * nodeSize(sprite).height/2
