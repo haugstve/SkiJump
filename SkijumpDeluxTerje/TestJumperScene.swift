@@ -23,7 +23,7 @@ class TestJumperScene: SKScene {
 
   override func didMoveToView(view: SKView) {
     enumerateChildNodesWithName("//*", usingBlock: {node, _ in
-      print("node added")
+        print("node: \(node.name ?? "no_name") added")
       if let customNode = node as? CustomNodeEvents {
         customNode.didMoveToScene()
       }
