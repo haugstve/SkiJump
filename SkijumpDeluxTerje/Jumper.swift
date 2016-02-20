@@ -46,15 +46,15 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     let neck = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: head.physicsBody!, anchor: scene!.convertPoint(head.position, fromNode: self))
     
-    lockJoint(shoulder)
-    lockJoint(elbow)
-    lockJoint(wrist)
+    lockJoint(shoulder,min: -5.0,max: 5.0)
+    lockJoint(elbow,min: -5.0,max: 5.0)
+    lockJoint(wrist,min: -5.0,max: 5.0)
     
-    lockJoint(hipp)
-    lockJoint(knee)
-    lockJoint(ancle)
+    lockJoint(hipp,min: -5.0,max: 5.0)
+    lockJoint(knee,min: -5.0,max: 5.0)
+    lockJoint(ancle,min: -5.0,max: 5.0)
     
-    lockJoint(neck)
+    lockJoint(neck,min: -5.0, max: 5.0)
     
     
     scene?.physicsWorld.addJoint(shoulder)
@@ -69,10 +69,10 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
   }
   
-  func lockJoint(joint: SKPhysicsJointPin) {
+  func lockJoint(joint: SKPhysicsJointPin, min: CGFloat, max: CGFloat) {
     joint.shouldEnableLimits = true
-    joint.upperAngleLimit = CGFloat(5).degreesToRadians()
-    joint.lowerAngleLimit = -CGFloat(5).degreesToRadians()
+    joint.upperAngleLimit = CGFloat(max).degreesToRadians()
+    joint.lowerAngleLimit = CGFloat(min).degreesToRadians()
   }
     
     func anchorFromNode(sprite: SKNode) -> CGPoint{
