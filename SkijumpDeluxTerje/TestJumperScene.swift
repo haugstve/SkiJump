@@ -27,9 +27,6 @@ class TestJumperScene: SKScene {
       if let customNode = node as? CustomNodeEvents {
         customNode.didMoveToScene()
       }
-      if let sprite = node as? SKSpriteNode {
-        sprite.color = SKColor.greenColor()
-      }
     })
   }
     

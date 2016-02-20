@@ -10,23 +10,52 @@ import SpriteKit
 
 class Jumper: SKSpriteNode, CustomNodeEvents {
   
-    var body: SKSpriteNode!
     var upperArm: SKSpriteNode!
+    var lowerArm: SKSpriteNode!
+    var hand: SKSpriteNode!
+    
+    var upperLeg: SKSpriteNode!
+    var lowerLeg: SKSpriteNode!
+    var foot: SKSpriteNode!
+    var ski: SKSpriteNode!
+    
     var head: SKSpriteNode!
   
   func didMoveToScene() {
-    print("jumper was added and died")
     //body = childNodeWithName("body") as! SKSpriteNode will crash, this node is the body
+    
     upperArm = childNodeWithName("upper_arm") as! SKSpriteNode
+    lowerArm = childNodeWithName("//lower_arm") as! SKSpriteNode
+    hand = childNodeWithName("//hand") as! SKSpriteNode
+    
+    upperLeg = childNodeWithName("upper_leg") as! SKSpriteNode
+    lowerLeg = childNodeWithName("//lower_leg") as! SKSpriteNode
+    foot = childNodeWithName("//foot") as! SKSpriteNode
+    ski = childNodeWithName("//ski") as! SKSpriteNode
+    
     head = childNodeWithName("head") as! SKSpriteNode
     
-//    let shoulder = SKPhysicsJointFixed.jointWithBodyA(self.physicsBody!, bodyB: upperArm.physicsBody!, anchor: anchorFromNode(upperArm))
-    let shoulder2 = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: upperArm.physicsBody!, anchor: anchorFromNode(upperArm))
-    scene?.physicsWorld.addJoint(shoulder2)
-    print("anchor point \(anchorFromNode(upperArm))")
-    print("upper arm rotation \(upperArm.zRotation)")
-     print("size of frame \(upperArm.frame.size)")
-     print("size of rotated frame \(nodeSize(upperArm))")
+
+    let shoulder = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: upperArm.physicsBody!, anchor: anchorFromNode(upperArm))
+    let elbow = SKPhysicsJointPin.jointWithBodyA(upperArm.physicsBody!, bodyB: lowerArm.physicsBody!, anchor: anchorFromNode(lowerArm))
+    let wrist = SKPhysicsJointPin.jointWithBodyA(lowerArm.physicsBody!, bodyB: hand.physicsBody!, anchor: anchorFromNode(hand))
+    
+    let hipp = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: upperLeg.physicsBody!, anchor: anchorFromNode(upperLeg))
+    let knee = SKPhysicsJointPin.jointWithBodyA(upperLeg.physicsBody!, bodyB: lowerLeg.physicsBody!, anchor: anchorFromNode(lowerLeg))
+    let ancle = SKPhysicsJointPin.jointWithBodyA(lowerLeg.physicsBody!, bodyB: foot.physicsBody!, anchor: anchorFromNode(foot))
+    
+    let neck = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: head.physicsBody!, anchor: scene!.convertPoint(head.position, fromNode: self))
+    
+    
+    scene?.physicsWorld.addJoint(shoulder)
+    scene?.physicsWorld.addJoint(elbow)
+    scene?.physicsWorld.addJoint(wrist)
+    
+    scene?.physicsWorld.addJoint(hipp)
+    scene?.physicsWorld.addJoint(knee)
+    scene?.physicsWorld.addJoint(ancle)
+    
+    scene?.physicsWorld.addJoint(neck)
     
   }
     
@@ -37,13 +66,11 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
         guard let parentNode = sprite.parent else {
             return CGPointZero
         }
-        var pointOfJointInParentCoordiantes = sprite.position
+        let positionOfNode = sprite.position
+        let positionOfTopOfNode = positionOfNode + CGPoint(x: 0, y: sprite.frame.height/2)
+        let postitonOfAnchor = positionOfTopOfNode + CGPoint(x: 0, y: -sprite.frame.width/2)
         
-        pointOfJointInParentCoordiantes += CGPoint(x: -10, y: 5)
-        //Angle is relative to parent and the body is tilted
-        //pointOfJointInParentCoordiantes += CGPoint(angle: sprite.zRotation) * nodeSize(sprite).height/2
-        // 0 is paralell and when the arms are raised in fromt the ange is more than 90 degrees
-        return scenOfSprite.convertPoint(pointOfJointInParentCoordiantes, fromNode: parentNode)
+        return scenOfSprite.convertPoint(postitonOfAnchor, fromNode: parentNode)
     }
     
     func nodeSize(sprite: SKNode) -> CGSize {
