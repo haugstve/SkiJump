@@ -47,6 +47,12 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     ski = makeSki()
     foot.addChild(ski)
     
+    let circle = SKSpriteNode(imageNamed: "circle")
+    circle.name = "shape"
+    circle.position = CGPoint(x: 50, y:50)
+    circle.physicsBody = SKPhysicsBody(circleOfRadius: circle.size.width/2)
+    foot.addChild(circle)
+    
 
     let shoulder = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: upperArm.physicsBody!, anchor: anchorFromNode(upperArm))
     let elbow = SKPhysicsJointPin.jointWithBodyA(upperArm.physicsBody!, bodyB: lowerArm.physicsBody!, anchor: anchorFromNode(lowerArm))
@@ -112,23 +118,14 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     }
   
     func makeSki() -> SKSpriteNode{
-        let startPoint = CGPointZero
-        let endOfFlatSki = startPoint + CGPoint(x: SkiGeometry.Length, y: 0)
-        let skiTipCircleRadius = endOfFlatSki + CGPoint(x: 0, y: SkiGeometry.TipRadius)
-      
-        let skiBzPath = UIBezierPath()
-        skiBzPath.moveToPoint(startPoint)
-        skiBzPath.addLineToPoint(endOfFlatSki)
-        skiBzPath.addArcWithCenter(skiTipCircleRadius, radius: SkiGeometry.TipRadius,
-            startAngle: -CGFloat(90).degreesToRadians(),
-            endAngle: -CGFloat(90).degreesToRadians() + SkiGeometry.TipDegrees.degreesToRadians(),
-            clockwise: true)
+        let flatSkiBody = SKPhysicsBody(rectangleOfSize: CGSize(width: SkiGeometry.Length, height: SkiGeometry.Tickness))
+        let frontSkiTipBody =  SKPhysicsBody(circleOfRadius: SkiGeometry.TipRadius, center: CGPoint(x: SkiGeometry.Length/2, y: SkiGeometry.TipRadius-SkiGeometry.Tickness/2))
+        let backSkiTipBody =  SKPhysicsBody(circleOfRadius: SkiGeometry.TipRadius, center: CGPoint(x: -SkiGeometry.Length/2, y: SkiGeometry.TipRadius-SkiGeometry.Tickness/2))
+        let skiBody = SKPhysicsBody(bodies: [backSkiTipBody, flatSkiBody, frontSkiTipBody])
+        
       
         let skiNode = SKSpriteNode(color: SKColor.cyanColor(), size: CGSize(width: SkiGeometry.Length, height: SkiGeometry.Tickness))
-        skiNode.physicsBody = SKPhysicsBody(edgeLoopFromPath: skiBzPath.CGPath)
-        skiNode.physicsBody?.collisionBitMask = PhysicsCategory.Hill
-        skiNode.physicsBody?.categoryBitMask = PhysicsCategory.Jumper
-        skiNode.physicsBody?.dynamic = true
+        skiNode.physicsBody = skiBody
         
         return skiNode
     }
