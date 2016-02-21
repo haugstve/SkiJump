@@ -20,7 +20,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         
-        if let scene = TestJumperScene(fileNamed: "TestJumperScene") {
+        //if let scene = TestJumperScene(fileNamed: "TestJumperScene") {
+        let scene = GameScene(size: GeometryConstants.HillSize)
        
           let skView = self.view as! SKView
           skView.showsFPS = true
@@ -34,7 +35,7 @@ class GameViewController: UIViewController {
           scene.scaleMode = .AspectFill
           
           skView.presentScene(scene)
-       }
+       //}
       
     }
 
