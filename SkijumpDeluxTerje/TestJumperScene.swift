@@ -13,11 +13,7 @@ protocol CustomNodeEvents {
   func didMoveToScene()
 }
 
-struct PhysicsCategory {
-    static let Node:UInt32 = 0
-    static let Jumpter:UInt32 = 0b1 //1
-    static let Hill:UInt32 = 0b100 //2
-}
+var direction = 1
 
 class TestJumperScene: SKScene {
 
@@ -29,5 +25,29 @@ class TestJumperScene: SKScene {
       }
     })
   }
+  
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    if let _ = touches.first {
+      var gravity = CGVector(dx: 0.0,dy: -9.8)
+      switch direction {
+        case 1:
+          direction = 2
+          gravity = CGVector(dx: 0.0,dy: -9.8)
+        case 2:
+          direction = 3
+          gravity = CGVector(dx: 9.8,dy: 0.0)
+        case 3:
+          direction = 4
+          gravity = CGVector(dx: 0.0,dy: 9.8)
+        case 4:
+          direction = 1
+          gravity = CGVector(dx: -9.8,dy: 0.0)
+        default:
+          direction = 1
+          gravity = CGVector(dx: 0.0,dy: -9.8)
+      }
+      physicsWorld.gravity = gravity
+    }
+}
     
 }

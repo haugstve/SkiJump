@@ -8,8 +8,16 @@
 
 import SpriteKit
 
+
+struct PhysicsCategory {
+    static let Node:UInt32 = 0
+    static let Jumper:UInt32 = 0b1 //1
+    static let Hill:UInt32 = 0b100 //2
+}
+
 class GameScene: SKScene {
-    
+  
+  
     
     //MARK: - Constants
     // Logical resolution iPad 768 x 1024
@@ -50,7 +58,7 @@ class GameScene: SKScene {
         static let WaitBeforeStartAnimation:CFTimeInterval = 0.5
         static let StartAnimation:CFTimeInterval = 3.0
     }
-    
+  
     let myCamera = SKCameraNode()
     var dt:CFTimeInterval = 0.0
     var previousTime:CFTimeInterval = 0
