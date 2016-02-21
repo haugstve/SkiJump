@@ -8,6 +8,7 @@
 
 import SpriteKit
 
+//This node is the body node
 class Jumper: SKSpriteNode, CustomNodeEvents {
   
     var upperArm: SKSpriteNode!
@@ -30,7 +31,6 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
   }
   
   func didMoveToScene() {
-    //body = childNodeWithName("body") as! SKSpriteNode will crash, this node is the body
     
     zRotation = CGFloat(-80).degreesToRadians()
     
@@ -46,13 +46,6 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     ski = makeSki()
     foot.addChild(ski)
-    
-    let circle = SKSpriteNode(imageNamed: "circle")
-    circle.name = "shape"
-    circle.position = CGPoint(x: 50, y:50)
-    circle.physicsBody = SKPhysicsBody(circleOfRadius: circle.size.width/2)
-    foot.addChild(circle)
-    
 
     let shoulder = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: upperArm.physicsBody!, anchor: anchorFromNode(upperArm))
     let elbow = SKPhysicsJointPin.jointWithBodyA(upperArm.physicsBody!, bodyB: lowerArm.physicsBody!, anchor: anchorFromNode(lowerArm))
@@ -64,7 +57,8 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     let neck = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: head.physicsBody!, anchor: scene!.convertPoint(head.position, fromNode: self))
     
-    let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(ski.position, fromNode: foot))
+    let bindingAnchorPoint = ski.position + CGPoint(x:0.0, y:foot.frame.width/2)
+    let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(bindingAnchorPoint, fromNode: foot))
     
     lockJoint(shoulder,min: -15,max: -10)
     lockJoint(elbow,min: 0,max: 5)
@@ -75,6 +69,8 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     lockJoint(ancle,min: 110,max: 140)
     
     lockJoint(neck,min: -5.0, max: 5.0)
+    
+    lockJoint(binding, min: -95.0, max: -85.0)
     
     
     scene?.physicsWorld.addJoint(shoulder)
