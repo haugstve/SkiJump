@@ -64,7 +64,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     let neck = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: head.physicsBody!, anchor: scene!.convertPoint(head.position, fromNode: self))
     
-    //let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(ski.position, fromNode: foot))
+    let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(ski.position, fromNode: foot))
     
     lockJoint(shoulder,min: -15,max: -10)
     lockJoint(elbow,min: 0,max: 5)
@@ -87,7 +87,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     scene?.physicsWorld.addJoint(neck)
     
-    //scene?.physicsWorld.addJoint(binding)
+    scene?.physicsWorld.addJoint(binding)
     
   }
   
@@ -126,6 +126,8 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
       
         let skiNode = SKSpriteNode(color: SKColor.cyanColor(), size: CGSize(width: SkiGeometry.Length, height: SkiGeometry.Tickness))
         skiNode.physicsBody = skiBody
+        skiNode.physicsBody?.categoryBitMask = PhysicsCategory.Jumper
+        skiNode.physicsBody?.categoryBitMask = PhysicsCategory.None
         
         return skiNode
     }

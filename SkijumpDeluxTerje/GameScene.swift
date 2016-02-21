@@ -10,7 +10,7 @@ import SpriteKit
 
 
 struct PhysicsCategory {
-    static let Node:UInt32 = 0
+    static let None:UInt32 = 0
     static let Jumper:UInt32 = 0b1 //1
     static let Hill:UInt32 = 0b100 //2
 }
