@@ -20,7 +20,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     var head: SKSpriteNode!
 
-    var ski: SKShapeNode!
+    var ski: SKSpriteNode!
   
   private struct SkiGeometry {
     static let Length:CGFloat = 200.0
@@ -58,7 +58,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
     
     let neck = SKPhysicsJointPin.jointWithBodyA(self.physicsBody!, bodyB: head.physicsBody!, anchor: scene!.convertPoint(head.position, fromNode: self))
     
-    let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(ski.position, fromNode: foot))
+    //let binding = SKPhysicsJointPin.jointWithBodyA(foot.physicsBody!, bodyB: ski.physicsBody!, anchor: scene!.convertPoint(ski.position, fromNode: foot))
     
     lockJoint(shoulder,min: -15,max: -10)
     lockJoint(elbow,min: 0,max: 5)
@@ -111,7 +111,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
         return spriteCopy.frame.size
     }
   
-    func makeSki() -> SKShapeNode {
+    func makeSki() -> SKSpriteNode{
         let startPoint = CGPointZero
         let endOfFlatSki = startPoint + CGPoint(x: SkiGeometry.Length, y: 0)
         let skiTipCircleRadius = endOfFlatSki + CGPoint(x: 0, y: SkiGeometry.TipRadius)
@@ -124,9 +124,7 @@ class Jumper: SKSpriteNode, CustomNodeEvents {
             endAngle: -CGFloat(90).degreesToRadians() + SkiGeometry.TipDegrees.degreesToRadians(),
             clockwise: true)
       
-        let skiNode = SKShapeNode(path: skiBzPath.CGPath)
-        skiNode.strokeColor = SKColor.cyanColor()
-        skiNode.lineWidth = SkiGeometry.Tickness
+        let skiNode = SKSpriteNode(color: SKColor.cyanColor(), size: CGSize(width: SkiGeometry.Length, height: SkiGeometry.Tickness))
         skiNode.physicsBody = SKPhysicsBody(edgeLoopFromPath: skiBzPath.CGPath)
         skiNode.physicsBody?.collisionBitMask = PhysicsCategory.Hill
         skiNode.physicsBody?.categoryBitMask = PhysicsCategory.Jumper
