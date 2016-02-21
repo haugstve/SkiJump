@@ -21,7 +21,6 @@ class GameViewController: UIViewController {
 
         
         if let scene = TestJumperScene(fileNamed: "TestJumperScene") {
-        //let scene = GameScene(size: GeometryConstants.HillSize)
        
           let skView = self.view as! SKView
           skView.showsFPS = true
