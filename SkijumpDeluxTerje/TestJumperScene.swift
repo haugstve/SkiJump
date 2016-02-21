@@ -13,12 +13,6 @@ protocol CustomNodeEvents {
   func didMoveToScene()
 }
 
-struct PhysicsCategory {
-    static let Node:UInt32 = 0
-    static let Jumpter:UInt32 = 0b1 //1
-    static let Hill:UInt32 = 0b100 //2
-}
-
 var direction = 1
 
 class TestJumperScene: SKScene {
